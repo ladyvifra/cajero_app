@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'; //permite hacer consultas y querys a la base de datos
 export default {
     name: 'UserBalance',
     data: function (){

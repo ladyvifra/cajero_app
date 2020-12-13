@@ -6,14 +6,14 @@
 
 <script>
     export default {
-        name: "User",
-        data:function(){
+        name: "user",
+        data:function(){ //incializa comandos por defectos, es una fucnión
             return {
                 username: "none"
             }
         },
         created: function(){
-            this.username = this.$route.params.username
+            this.username = this.$route.params.username //el usernamae toma el valor que nos pasan a través de la ruta
         }
     }
 </script>

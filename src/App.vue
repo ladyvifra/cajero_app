@@ -10,7 +10,7 @@
       </nav>
     </div>
     <div class="main-component">
-      <router-view></router-view>
+      <router-view></router-view>  <!-- dependiendo d ela ruta va a l componenete-->
     </div>
 
     <div class="footer">
@@ -32,24 +32,24 @@ data: function(){
   }
 },
 methods: {
-
-  init: function(){
+ //verifica que esté el usuario 
+  init: function(){ 
     if(this.$route.name != "user"){
       let username = localStorage.getItem("current_username")
-      this.$router.push({name: "user", params:{username:username}})
+      this.$router.push({name: "user", params:{username:username}}) //esta línea al componente User le envía los parámetros que recibió
   }
 },
-getBalance: function(){
-  if(this.$route.name != "user_balance"){
+getBalance: function(){ //nos valida que la ruta sea diferente
+  if(this.$route.name != "user_balance"){ //route, es la ruta en la que se encuentra
     let username = localStorage.getItem("current_username")
-    this.$router.push({ name:"user_balance",
+    this.$router.push({ name:"user_balance", //la ruta hacia donde va
                         params:{username:username}
                       })
     }
   },
 },
 
-beforeCreate: function(){
+beforeCreate: function(){ //antes de iniciar o d e crear guardar en localstorgae
     localStorage.setItem('current_username', 'camilo24')
     localStorage.setItem('isAuth', true)
 
